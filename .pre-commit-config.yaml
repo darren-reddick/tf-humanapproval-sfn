@@ -1,0 +1,21 @@
+repos:
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.64.1 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
+  hooks:
+    - id: checkov
+    - id: terraform_tflint
+      args:
+        - --args=--enable-plugin=aws
+        - --args=--enable-rule=terraform_documented_variables
+    - id: infracost_breakdown
+      args:
+        - --args=--path=.
+      verbose: true # Always show costs
+- repo: local
+  hooks:
+    - id: terraform_fmt
+      name: terrform_fmt
+      description: Fix formatting errors
+      entry: terraform fmt -recursive
+      language: system
+      pass_filenames: false
