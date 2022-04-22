@@ -4,3 +4,9 @@ node_modules
 terraform.tfstate
 terraform.tfstate.backup
 .terraform.lock.hcl
+
+bin
+
+.DS_Store
+
+.infracost/.infracost-cache
