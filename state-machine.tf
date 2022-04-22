@@ -14,7 +14,8 @@ resource "aws_sfn_state_machine" "sfn" {
         "FunctionName": "${aws_lambda_function.lambda_approvalsendemail_function.arn}",
         "Payload": {
           "ExecutionContext.$": "$$",
-          "APIGatewayEndpoint": "${aws_api_gateway_stage.stage.invoke_url}"
+          "APIGatewayEndpoint": "${aws_api_gateway_stage.stage.invoke_url}",
+          "SNSTopicArn": "${aws_sns_topic.human_approval.arn}"
         }
       },
       "Next": "ManualApprovalChoiceState"
