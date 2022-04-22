@@ -8,3 +8,5 @@ terraform.tfstate.backup
 bin
 
 .DS_Store
+
+.infracost/.infracost-cache
