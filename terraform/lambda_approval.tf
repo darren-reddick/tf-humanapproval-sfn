@@ -38,8 +38,8 @@ resource "aws_lambda_function" "lambda_approval_function" {
 
 data "archive_file" "approvalsource" {
   type        = "zip"
-  source_file = "${path.module}/bin/approvalHandler"
-  output_path = "${path.module}/bin/approvalHandler.zip"
+  source_file = "${path.module}/../bin/approvalHandler"
+  output_path = "${path.module}/../bin/approvalHandler.zip"
 }
 
 

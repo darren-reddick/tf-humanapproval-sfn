@@ -39,8 +39,8 @@ resource "aws_lambda_function" "lambda_approvalsendemail_function" {
 
 data "archive_file" "approvalsendemailsource" {
   type        = "zip"
-  source_file = "${path.module}/bin/approvalSendEmailHandler"
-  output_path = "${path.module}/bin/approvalSendEmailHandler.zip"
+  source_file = "${path.module}/../bin/approvalSendEmailHandler"
+  output_path = "${path.module}/../bin/approvalSendEmailHandler.zip"
 }
 
 
